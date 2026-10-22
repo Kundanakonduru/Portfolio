@@ -1,0 +1,676 @@
+/* ==========================================
+   PROJECTS SECTION
+========================================== */
+
+.projects-section {
+  position: relative;
+  padding: 110px 7%;
+  overflow: hidden;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      ellipse at 10% 5%,
+      rgba(37, 169, 255, 0.09),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 90% 90%,
+      rgba(124, 58, 237, 0.07),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #050b18 0%, #071426 55%, #06101f 100%);
+}
+
+.projects-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.projects-heading {
+  max-width: 720px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.projects-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #25a9ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.projects-heading h2 {
+  margin: 0 0 20px;
+  color: #f4f8ff;
+  font-size: clamp(34px, 4vw, 50px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.projects-heading h2 span {
+  color: #25a9ff;
+}
+
+.projects-heading > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #a8b8cc;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   PROJECT GRID
+========================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* ==========================================
+   UNIQUE PROJECT COLORS
+========================================== */
+
+/* 01 - Logistics */
+
+.project-card:nth-child(1) {
+  --project-accent: #25a9ff;
+  --project-glow: rgba(37, 169, 255, 0.13);
+}
+
+/* 02 - Hospital */
+
+.project-card:nth-child(2) {
+  --project-accent: #2dd4bf;
+  --project-glow: rgba(45, 212, 191, 0.12);
+}
+
+/* 03 - Cancer Diagnosis ML */
+
+.project-card:nth-child(3) {
+  --project-accent: #a78bfa;
+  --project-glow: rgba(167, 139, 250, 0.14);
+}
+
+/* 04 - Online Learning */
+
+.project-card:nth-child(4) {
+  --project-accent: #fbbf24;
+  --project-glow: rgba(251, 191, 36, 0.11);
+}
+
+/* ==========================================
+   PROJECT CARD
+========================================== */
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 450px;
+  padding: 32px;
+  overflow: hidden;
+
+  border: 1px solid
+    color-mix(in srgb, var(--project-accent) 28%, transparent);
+
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      var(--project-glow),
+      transparent 45%
+    ),
+    linear-gradient(145deg, #102440, #081629);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Animated top accent */
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    var(--project-accent),
+    transparent
+  );
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.35s ease;
+}
+
+/* Decorative glow */
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+  background: var(--project-glow);
+  filter: blur(50px);
+
+  opacity: 0.45;
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+
+  border-color: var(--project-accent);
+
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.28),
+    0 0 24px var(--project-glow);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover::after {
+  opacity: 0.9;
+  transform: scale(1.2);
+}
+
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.project-card-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.project-number {
+  color: #8ba4c2;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Unique icon for every card */
+
+.project-icon {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+
+  border: 1px solid
+    color-mix(in srgb, var(--project-accent) 38%, transparent);
+
+  border-radius: 16px;
+
+  background: color-mix(
+    in srgb,
+    var(--project-accent) 12%,
+    transparent
+  );
+
+  color: var(--project-accent);
+  font-size: 25px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+  transform: translateY(-3px) rotate(-5deg);
+
+  background: color-mix(
+    in srgb,
+    var(--project-accent) 20%,
+    transparent
+  );
+}
+
+/* ==========================================
+   PROJECT CONTENT
+========================================== */
+
+.project-category {
+  position: relative;
+  z-index: 1;
+
+  display: inline-block;
+  align-self: flex-start;
+
+  margin-bottom: 13px;
+
+  color: var(--project-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.8;
+}
+
+.project-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 16px;
+
+  color: #f4f8ff;
+  font-size: 22px;
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+
+  overflow-wrap: anywhere;
+}
+
+.project-description {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 26px;
+
+  color: #a8b8cc;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   TECHNOLOGY TAGS
+========================================== */
+
+.project-technologies {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 10px;
+
+  margin-top: auto;
+  padding: 0 0 28px;
+}
+
+.project-tech {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100%;
+  padding: 8px 12px;
+
+  border: 1px solid
+    color-mix(in srgb, var(--project-accent) 25%, transparent);
+
+  border-radius: 8px;
+
+  background: color-mix(
+    in srgb,
+    var(--project-accent) 7%,
+    #0b1b30
+  );
+
+  color: #d5e5f5;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.project-card:hover .project-tech {
+  border-color: color-mix(
+    in srgb,
+    var(--project-accent) 45%,
+    transparent
+  );
+
+  color: #ffffff;
+}
+
+/* ==========================================
+   CARD FOOTER
+========================================== */
+
+.project-card-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin-top: auto;
+  padding-top: 23px;
+
+  border-top: 1px solid rgba(135, 169, 205, 0.16);
+}
+
+/* ==========================================
+   VIEW PROJECT BUTTON
+========================================== */
+
+.view-project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 44px;
+  padding: 12px 19px;
+
+  border: 1px solid #25a9ff;
+  border-radius: 10px;
+
+  background: #25a9ff;
+  color: #061426;
+
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+
+  box-shadow: 0 5px 18px rgba(37, 169, 255, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.view-project-btn span {
+  display: inline-block;
+  font-size: 17px;
+
+  transition: transform 0.25s ease;
+}
+
+.view-project-btn:hover {
+  transform: translateY(-2px);
+
+  background: transparent;
+  color: #25a9ff;
+
+  box-shadow: 0 8px 22px rgba(37, 169, 255, 0.12);
+}
+
+.view-project-btn:hover span {
+  transform: translate(3px, -3px);
+}
+
+.view-project-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   GITHUB LABEL
+========================================== */
+
+.project-footer-label {
+  color: #7893b3;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-align: right;
+}
+
+/* ==========================================
+   SECTION FOOTER
+========================================== */
+
+.projects-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  margin-top: 48px;
+
+  color: #a8b8cc;
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.projects-footer p {
+  margin: 0;
+}
+
+.projects-footer-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #20d5a0;
+
+  box-shadow: 0 0 12px rgba(32, 213, 160, 0.6);
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 950px) {
+  .projects-section {
+    padding: 90px 5%;
+  }
+
+  .projects-grid {
+    gap: 23px;
+  }
+
+  .project-card {
+    min-height: 450px;
+    padding: 26px;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 650px) {
+  .projects-section {
+    padding: 72px 20px;
+  }
+
+  .projects-heading {
+    margin-bottom: 38px;
+  }
+
+  .projects-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .projects-heading h2 {
+    font-size: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .projects-heading > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .project-card {
+    min-height: auto;
+    padding: 25px 23px;
+    border-radius: 18px;
+  }
+
+  .project-card-top {
+    margin-bottom: 23px;
+  }
+
+  .project-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    font-size: 22px;
+  }
+
+  .project-category {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .project-description {
+    margin-bottom: 22px;
+    font-size: 13px;
+  }
+
+  .project-technologies {
+    gap: 9px;
+    padding-bottom: 24px;
+  }
+
+  .project-tech {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .project-card-footer {
+    gap: 13px;
+    padding-top: 20px;
+  }
+
+  .view-project-btn {
+    padding: 11px 15px;
+    font-size: 11px;
+  }
+
+  .project-footer-label {
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .projects-footer {
+    margin-top: 35px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+  .projects-section {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .project-card {
+    padding: 22px 18px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+  }
+
+  .project-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-footer-label {
+    text-align: left;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card::before,
+  .project-card::after,
+  .project-icon,
+  .project-tech,
+  .view-project-btn,
+  .view-project-btn span {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .view-project-btn:hover {
+    transform: none;
+  }
+}

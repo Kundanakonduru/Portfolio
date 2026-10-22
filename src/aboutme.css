@@ -1,0 +1,378 @@
+/* ================= ABOUT ME SECTION ================= */
+
+.about-section {
+  position: relative;
+  padding: 100px 7%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(
+      circle at 15% 35%,
+      rgba(37, 169, 255, 0.09),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #050b18 0%, #071426 55%, #06101f 100%);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 65px;
+}
+
+/* ================= PROFILE IMAGE ================= */
+
+.avatar-area {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.avatar-glow {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background: rgba(37, 169, 255, 0.18);
+  filter: blur(75px);
+  z-index: 0;
+}
+
+.avatar-video {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  height: 490px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(37, 169, 255, 0.35);
+  border-radius: 24px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(37, 169, 255, 0.08);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.avatar-area:hover .avatar-video {
+  transform: translateY(-5px);
+  border-color: rgba(37, 169, 255, 0.7);
+  box-shadow: 0 25px 60px rgba(37, 169, 255, 0.13);
+}
+
+/* ================= ABOUT CONTENT ================= */
+
+.about-content {
+  min-width: 0;
+}
+
+.small-title {
+  margin: 0 0 16px;
+  color: #25a9ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.about-content h1 {
+  margin: 0 0 18px;
+  color: #f8fafc;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.about-content h1 span {
+  color: #25a9ff;
+}
+
+.about-content h2 {
+  margin: 0 0 24px;
+  color: #dbeafe;
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.about-text {
+  margin: 0 0 25px;
+  color: #a8b8cc;
+  font-size: 15px;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}
+
+/* ================= LISTEN BUTTON ================= */
+
+.listen-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  margin: 0 0 30px;
+  padding: 13px 23px;
+  border: 1px solid #25a9ff;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #25a9ff, #087be0);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(37, 169, 255, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.listen-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(37, 169, 255, 0.3);
+}
+
+.listen-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.listen-btn:active {
+  transform: translateY(0);
+}
+
+.play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 12px;
+}
+
+/* ================= STATISTICS ================= */
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 130px;
+  padding: 18px 10px;
+  border: 1px solid rgba(37, 169, 255, 0.18);
+  border-radius: 15px;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 38, 69, 0.88),
+    rgba(8, 25, 48, 0.94)
+  );
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  border-color: rgba(37, 169, 255, 0.55);
+  background: rgba(37, 169, 255, 0.08);
+}
+
+.stat h3 {
+  margin: 0 0 12px;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.stat strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #eaf5ff;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.stat span {
+  color: #91a7c0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+  .about-section {
+    padding: 85px 5%;
+  }
+
+  .about-container {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 35px;
+  }
+
+  .avatar-video {
+    height: 420px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stat {
+    min-height: 115px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+  .about-section {
+    min-height: auto;
+    padding: 75px 20px;
+  }
+
+  .about-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .avatar-area {
+    width: 100%;
+  }
+
+  .avatar-video {
+    width: 100%;
+    max-width: 310px;
+    height: 350px;
+    border-radius: 20px;
+  }
+
+  .about-content {
+    text-align: left;
+  }
+
+  .small-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .about-content h1 {
+    font-size: 35px;
+    letter-spacing: -0.8px;
+  }
+
+  .about-content h2 {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .listen-btn {
+    width: 100%;
+    min-height: 49px;
+    margin-bottom: 28px;
+    padding: 13px 15px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stat {
+    min-height: 120px;
+    padding: 16px 10px;
+  }
+
+  .stat h3 {
+    font-size: 23px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 360px) {
+  .about-section {
+    padding: 60px 15px;
+  }
+
+  .about-content h1 {
+    font-size: 30px;
+  }
+
+  .about-content h2 {
+    font-size: 16px;
+  }
+
+  .about-stats {
+    gap: 9px;
+  }
+
+  .stat {
+    padding: 14px 7px;
+  }
+
+  .stat strong {
+    font-size: 12px;
+  }
+
+  .stat span {
+    font-size: 11px;
+  }
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-video,
+  .listen-btn,
+  .stat {
+    transition: none;
+  }
+
+  .avatar-area:hover .avatar-video,
+  .listen-btn:hover,
+  .stat:hover {
+    transform: none;
+  }
+}

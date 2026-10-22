@@ -1,0 +1,469 @@
+/* ================= ACHIEVEMENTS SECTION ================= */
+
+.achievements-section {
+position: relative;
+overflow: hidden;
+padding: 110px 7%;
+background:
+radial-gradient(
+circle at 8% 15%,
+rgba(37, 169, 255, 0.08),
+transparent 30%
+),
+radial-gradient(
+circle at 92% 85%,
+rgba(124, 58, 237, 0.08),
+transparent 30%
+),
+#071426;
+color: #f8fafc;
+}
+
+.achievements-container {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* ================= SECTION HEADING ================= */
+
+.achievements-heading {
+max-width: 760px;
+margin: 0 auto 65px;
+text-align: center;
+}
+
+.achievements-eyebrow {
+display: inline-block;
+margin-bottom: 18px;
+color: #25a9ff;
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 3px;
+}
+
+.achievements-heading h2 {
+margin: 0 0 20px;
+color: #f8fafc;
+font-size: clamp(32px, 4.5vw, 50px);
+font-weight: 800;
+line-height: 1.25;
+letter-spacing: -1.5px;
+}
+
+.achievements-heading h2 span {
+color: #25a9ff;
+}
+
+.achievements-heading p {
+max-width: 650px;
+margin: 0 auto;
+color: #94a3b8;
+font-size: 15px;
+line-height: 1.9;
+}
+
+/* ================= CERTIFICATION GRID ================= */
+
+.achievements-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 25px;
+align-items: stretch;
+}
+
+/* ================= CERTIFICATION CARD ================= */
+
+.achievement-card {
+--achievement-accent: #25a9ff;
+--achievement-glow: rgba(37, 169, 255, 0.12);
+
+position: relative;
+display: flex;
+flex-direction: column;
+min-width: 0;
+min-height: 390px;
+padding: 30px 25px 23px;
+overflow: hidden;
+border: 1px solid rgba(148, 163, 184, 0.15);
+border-radius: 22px;
+background: linear-gradient(
+145deg,
+rgba(17, 39, 65, 0.97),
+rgba(8, 24, 43, 0.98)
+);
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.16);
+transition:
+transform 0.35s ease,
+border-color 0.35s ease,
+box-shadow 0.35s ease;
+animation: achievementFadeIn 0.7s ease both;
+}
+
+.achievement-card:nth-child(2) {
+animation-delay: 0.12s;
+}
+
+.achievement-card:nth-child(3) {
+animation-delay: 0.24s;
+}
+
+/* Unique accent colors */
+
+.achievement-card.blue {
+--achievement-accent: #25a9ff;
+--achievement-glow: rgba(37, 169, 255, 0.13);
+}
+
+.achievement-card.purple {
+--achievement-accent: #a78bfa;
+--achievement-glow: rgba(167, 139, 250, 0.13);
+}
+
+.achievement-card.teal {
+--achievement-accent: #2dd4bf;
+--achievement-glow: rgba(45, 212, 191, 0.12);
+}
+
+/* Decorative glow */
+
+.achievement-card::before {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 3px;
+background: linear-gradient(
+90deg,
+var(--achievement-accent),
+transparent
+);
+content: "";
+}
+
+.achievement-card::after {
+position: absolute;
+top: -90px;
+right: -90px;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+background: var(--achievement-glow);
+filter: blur(35px);
+content: "";
+pointer-events: none;
+transition: opacity 0.35s ease;
+}
+
+.achievement-card:hover {
+transform: translateY(-9px);
+border-color: var(--achievement-accent);
+box-shadow:
+0 22px 50px rgba(0, 0, 0, 0.28),
+0 0 25px var(--achievement-glow);
+}
+
+/* ================= CARD TOP ================= */
+
+.achievement-card-top {
+position: relative;
+z-index: 1;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+margin-bottom: 32px;
+}
+
+.achievement-number {
+color: #64748b;
+font-size: 13px;
+font-weight: 800;
+letter-spacing: 2px;
+}
+
+.achievement-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 65px;
+height: 65px;
+border: 1px solid color-mix(
+in srgb,
+var(--achievement-accent) 35%,
+transparent
+);
+border-radius: 18px;
+background: var(--achievement-glow);
+color: var(--achievement-accent);
+font-size: 32px;
+transition:
+transform 0.35s ease,
+border-radius 0.35s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+transform: rotate(-5deg) scale(1.07);
+border-radius: 22px;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.achievement-category {
+position: relative;
+z-index: 1;
+align-self: flex-start;
+margin-bottom: 14px;
+color: var(--achievement-accent);
+font-size: 10px;
+font-weight: 800;
+letter-spacing: 1.5px;
+line-height: 1.7;
+}
+
+.achievement-card h3 {
+position: relative;
+z-index: 1;
+margin: 0 0 15px;
+color: #f8fafc;
+font-size: 21px;
+font-weight: 750;
+line-height: 1.45;
+overflow-wrap: anywhere;
+}
+
+.achievement-organization {
+position: relative;
+z-index: 1;
+display: flex;
+align-items: center;
+gap: 9px;
+margin-bottom: 20px;
+color: #cbd5e1;
+font-size: 13px;
+font-weight: 600;
+line-height: 1.6;
+}
+
+.organization-dot {
+width: 7px;
+height: 7px;
+flex-shrink: 0;
+border-radius: 50%;
+background: var(--achievement-accent);
+box-shadow: 0 0 10px var(--achievement-glow);
+}
+
+.achievement-description {
+position: relative;
+z-index: 1;
+flex: 1;
+margin: 0 0 25px;
+color: #94a3b8;
+font-size: 13px;
+line-height: 1.9;
+}
+
+/* ================= CARD FOOTER ================= */
+
+.achievement-card-bottom {
+position: relative;
+z-index: 1;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 10px;
+margin-top: auto;
+padding-top: 20px;
+border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.achievement-verified {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+color: #cbd5e1;
+font-size: 12px;
+font-weight: 600;
+}
+
+.achievement-verified span {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: var(--achievement-glow);
+color: var(--achievement-accent);
+font-size: 12px;
+font-weight: 800;
+}
+
+.achievement-star {
+color: var(--achievement-accent);
+font-size: 20px;
+transition: transform 0.35s ease;
+}
+
+.achievement-card:hover .achievement-star {
+transform: rotate(45deg) scale(1.15);
+}
+
+/* ================= SECTION FOOTER ================= */
+
+.achievements-footer {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 18px;
+margin-top: 65px;
+text-align: center;
+}
+
+.achievements-footer p {
+margin: 0;
+color: #64748b;
+font-size: 12px;
+line-height: 1.8;
+}
+
+.achievements-footer-line {
+width: 55px;
+height: 1px;
+background: linear-gradient(
+90deg,
+transparent,
+rgba(37, 169, 255, 0.55)
+);
+}
+
+.achievements-footer-line:last-child {
+transform: rotate(180deg);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes achievementFadeIn {
+from {
+opacity: 0;
+transform: translateY(22px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+.achievements-section {
+padding: 90px 5%;
+}
+
+.achievements-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 22px;
+}
+
+.achievement-card {
+min-height: 370px;
+}
+
+.achievement-card:last-child {
+grid-column: 1 / -1;
+min-height: 320px;
+}
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+.achievements-section {
+padding: 75px 5%;
+}
+
+.achievements-heading {
+margin-bottom: 40px;
+}
+
+.achievements-eyebrow {
+font-size: 10px;
+letter-spacing: 2px;
+}
+
+.achievements-heading h2 {
+font-size: 31px;
+letter-spacing: -0.8px;
+}
+
+.achievements-heading p {
+font-size: 13px;
+line-height: 1.8;
+}
+
+.achievements-grid {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+
+.achievement-card,
+.achievement-card:last-child {
+grid-column: auto;
+min-height: 0;
+padding: 25px 22px 20px;
+border-radius: 18px;
+}
+
+.achievement-card-top {
+margin-bottom: 25px;
+}
+
+.achievement-icon {
+width: 58px;
+height: 58px;
+border-radius: 15px;
+font-size: 28px;
+}
+
+.achievement-card h3 {
+font-size: 20px;
+}
+
+.achievement-description {
+font-size: 13px;
+line-height: 1.8;
+}
+
+.achievements-footer {
+gap: 10px;
+margin-top: 40px;
+}
+
+.achievements-footer p {
+font-size: 10px;
+}
+
+.achievements-footer-line {
+width: 25px;
+}
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+.achievement-card {
+animation: none;
+transition: none;
+}
+
+.achievement-card:hover {
+transform: none;
+}
+
+.achievement-icon,
+.achievement-star {
+transition: none;
+}
+}
